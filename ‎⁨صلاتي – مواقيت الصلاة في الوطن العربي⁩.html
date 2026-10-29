@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>صلاتي – مواقيت الصلاة في الوطن العربي</title>
+<meta name="theme-color" content="#0b4d33"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b4d33'/%3E%3Cpath d='M38 12a20 20 0 1 0 12 36A17 17 0 0 1 38 12z' fill='%23f3d77a'/%3E%3Cpath d='M47 14l1.6 4 4.2.5-3.1 2.8.9 4.2-3.6-2.2-3.6 2.2.9-4.2-3.1-2.8 4.2-.5z' fill='%23f3d77a'/%3E%3C/svg%3E"><meta name="description" content="مواقيت الصلاة اليومية والشهرية لجميع الدول والمدن العربية، مع عداد تنازلي للصلاة القادمة وتنبيهات وتاريخ هجري.">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f3ea;--card:#fff;--tx:#12301f;--mu:#5d6b61;--g:#0b4d33;--g2:#146c47;--au:#c49a2c;--bd:#e4dcc5;--hl:#fff6d9;color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08150f;--card:#0f241a;--tx:#f2ecd9;--mu:#a9b8ac;--g:#0b4d33;--g2:#1b7d54;--au:#e0b94a;--bd:#1f3b2d;--hl:#223a1a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#08150f;--card:#0f241a;--tx:#f2ecd9;--mu:#a9b8ac;--g:#0b4d33;--g2:#1b7d54;--au:#e0b94a;--bd:#1f3b2d;--hl:#223a1a;color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px)}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;min-height:100%;background:var(--bg);color:var(--tx);font-family:Tajawal,Tahoma,Arial,sans-serif;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px));
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 4l6 14 14-6-6 14 14 6-14 6 6 14-14-6-6 14-6-14-14 6 6-14-14-6 14-6-6-14 14 6z' fill='none' stroke='%23c49a2c' stroke-opacity='.13'/%3E%3C/svg%3E")}
+header{background:linear-gradient(160deg,var(--g),#06301f);color:#fff;text-align:center;padding:18px 14px 70px;position:relative;overflow:hidden}
+header svg.mosque{position:absolute;bottom:0;left:0;width:100%;height:60px;opacity:.22}
+.logo{display:flex;align-items:center;justify-content:center;gap:8px;font-weight:800;font-size:1.5rem;color:#f3d77a}
+.logo small{font-weight:500;font-size:.85rem;color:#fff;opacity:.85}
+.dates{font-size:.9rem;opacity:.92;margin-top:6px;line-height:1.7}
+.clock{font-size:2.6rem;font-weight:800;direction:ltr;letter-spacing:1px;margin-top:2px}
+.loc{display:inline-block;margin-top:4px;background:#ffffff22;border-radius:20px;padding:5px 14px;font-size:.95rem;cursor:pointer;border:0;color:#fff;font:inherit}
+main{max-width:760px;margin:-52px auto 0;padding:0 12px;position:relative}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;margin-bottom:12px;box-shadow:0 4px 16px #0000000f}
+.next{text-align:center;border-color:var(--au)}
+.next .cd{font-size:2.3rem;font-weight:800;color:var(--au);direction:ltr}
+.next .nm{color:var(--mu)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pc{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;text-align:center}
+.pc b{display:block;font-size:1.1rem}.pc span{font-size:1.5rem;font-weight:800;color:var(--g2);direction:ltr;display:block;margin-top:4px}
+.pc.on{background:var(--hl);border:2px solid var(--au)}
+.pc.sr{opacity:.85}.pc small{color:var(--mu)}
+.pc.on small{color:var(--au);font-weight:700}
+h2{font-size:1.15rem;margin:6px 4px 10px;color:var(--g2)}
+select,input,button.b{font:inherit;color:var(--tx);background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:10px;width:100%;margin-bottom:10px}
+button.b{background:var(--g2);color:#fff;border:0;font-weight:700;cursor:pointer}
+button.b.alt{background:var(--card);color:var(--tx);border:1px solid var(--bd)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:20px;padding:8px 14px;font:inherit;cursor:pointer}
+.chip.sel{background:var(--g2);color:#fff;border-color:var(--g2)}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:.88rem;text-align:center;min-width:480px}
+th,td{padding:8px 4px;border-bottom:1px solid var(--bd)}th{color:var(--au)}td{direction:ltr}tr.td td{background:var(--hl);font-weight:700}
+.row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--bd)}
+.row:last-child{border:0}
+.sw{width:46px;height:26px;border-radius:14px;background:var(--bd);position:relative;border:0;cursor:pointer;flex:none}
+.sw:after{content:"";position:absolute;top:3px;right:3px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.2s}
+.sw.on{background:var(--g2)}.sw.on:after{right:23px}
+.mu{color:var(--mu);font-size:.88rem;line-height:1.8}
+nav{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--bd);display:flex;padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));z-index:20}
+nav a{flex:1;text-align:center;font-size:.78rem;color:var(--mu);text-decoration:none;padding:4px 2px}
+nav a i{display:flex;justify-content:center;font-style:normal;margin-bottom:3px}nav a i svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}nav a.act{color:var(--au);font-weight:700}nav a.act i svg{stroke-width:2.2}.loc svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;vertical-align:-3px;stroke-linecap:round;stroke-linejoin:round}
+#toast{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);background:var(--g);color:#fff;padding:10px 18px;border-radius:14px;z-index:30;display:none}
+.err{color:#c0392b;font-weight:700}
+</style>
+</head>
+<body>
+<div id="toast"></div>
+<header>
+<div class="logo"><svg width="42" height="42" viewBox="0 0 64 64"><rect x="1" y="1" width="62" height="62" rx="16" fill="#ffffff14" stroke="#f3d77a" stroke-opacity=".55" stroke-width="2"/><path d="M38 12a20 20 0 1 0 12 36A17 17 0 0 1 38 12z" fill="#f3d77a"/><path d="M47 14l1.6 4 4.2.5-3.1 2.8.9 4.2-3.6-2.2-3.6 2.2.9-4.2-3.1-2.8 4.2-.5z" fill="#f3d77a"/></svg><span>صلاتي <small>مواقيت الصلاة</small></span></div>
+<div class="dates" id="dt"></div>
+<div class="clock" id="clk">--:--:--</div>
+<button class="loc" id="locb" onclick="location.hash='cities'"></button>
+<svg class="mosque" viewBox="0 0 400 60" preserveAspectRatio="none"><path fill="#f3d77a" d="M0 60V44h30V30l8-12 8 12v14h24c0-16 14-26 28-26s28 10 28 26h40V20h6V8l4-8 4 8v12h6v24h30c0-20 18-30 34-30s34 10 34 30h40V32l8-14 8 14v12h30V60z"/></svg>
+</header>
+<main id="app"></main>
+<nav id="nav"></nav>
+<script>
+const $=s=>document.querySelector(s),D=Math.PI/180,sin=x=>Math.sin(x*D),cos=x=>Math.cos(x*D),tan=x=>Math.tan(x*D),asin=x=>Math.asin(x)/D,acos=x=>Math.acos(x)/D,atan2=(a,b)=>Math.atan2(a,b)/D,acot=x=>Math.atan(1/x)/D,fix=(a,b)=>a-b*Math.floor(a/b);
+const C="ليبيا|Africa/Tripoli|mwl|طرابلس:32.89:13.19,بنغازي:32.12:20.07,مصراتة:32.38:15.09,سبها:27.04:14.43;مصر|Africa/Cairo|egy|القاهرة:30.04:31.24,الإسكندرية:31.2:29.92,الأقصر:25.69:32.64,أسوان:24.09:32.9,بورسعيد:31.26:32.3;تونس|Africa/Tunis|tun|تونس:36.81:10.18,صفاقس:34.74:10.76,سوسة:35.83:10.64;الجزائر|Africa/Algiers|alg|الجزائر:36.75:3.06,وهران:35.7:-0.63,قسنطينة:36.37:6.61;المغرب|Africa/Casablanca|mor|الرباط:34.02:-6.84,الدار البيضاء:33.57:-7.59,مراكش:31.63:-8,فاس:34.03:-5;موريتانيا|Africa/Nouakchott|mwl|نواكشوط:18.09:-15.98,نواذيبو:20.93:-17.03;السودان|Africa/Khartoum|egy|الخرطوم:15.5:32.56,بورتسودان:19.62:37.22,نيالا:12.05:24.88;السعودية|Asia/Riyadh|umq|مكة المكرمة:21.42:39.83,المدينة المنورة:24.47:39.61,الرياض:24.71:46.68,جدة:21.54:39.17,الدمام:26.43:50.1;الإمارات|Asia/Dubai|mwl|أبوظبي:24.45:54.38,دبي:25.2:55.27,الشارقة:25.35:55.42;قطر|Asia/Qatar|qat|الدوحة:25.29:51.53,الريان:25.29:51.42;الكويت|Asia/Kuwait|kwt|مدينة الكويت:29.38:47.99,الجهراء:29.35:47.68;البحرين|Asia/Bahrain|umq|المنامة:26.23:50.59,المحرق:26.26:50.61;عُمان|Asia/Muscat|mwl|مسقط:23.59:58.41,صلالة:17.02:54.09,صحار:24.35:56.71;اليمن|Asia/Aden|umq|صنعاء:15.37:44.19,عدن:12.78:45.04,تعز:13.58:44.02;العراق|Asia/Baghdad|mwl|بغداد:33.31:44.37,البصرة:30.51:47.78,الموصل:36.34:43.13,أربيل:36.19:44.01;الأردن|Asia/Amman|mwl|عمّان:31.95:35.93,إربد:32.56:35.85,العقبة:29.53:35;فلسطين|Asia/Hebron|mwl|القدس:31.77:35.21,غزة:31.5:34.47,رام الله:31.9:35.2;سوريا|Asia/Damascus|egy|دمشق:33.51:36.28,حلب:36.2:37.16,حمص:34.73:36.72;لبنان|Asia/Beirut|egy|بيروت:33.89:35.5,طرابلس:34.44:35.85,صيدا:33.56:35.37;جيبوتي|Africa/Djibouti|umq|جيبوتي:11.59:43.15;الصومال|Africa/Mogadishu|umq|مقديشو:2.05:45.32,هرجيسا:9.56:44.06;جزر القمر|Indian/Comoro|mwl|موروني:-11.7:43.26".split(";").map(s=>{const[n,tz,m,cs]=s.split("|");return{n,tz,m,c:cs.split(",").map(x=>{const[a,b,c]=x.split(":");return{n:a,lat:+b,lng:+c}})}});
+const M={mwl:["رابطة العالم الإسلامي",18,17],egy:["الهيئة المصرية العامة للمساحة",19.5,17.5],umq:["أم القرى (مكة المكرمة)",18.5,0,90],khi:["جامعة العلوم الإسلامية – كراتشي",18,18],isna:["أمريكا الشمالية (ISNA)",15,15],tun:["وزارة الشؤون الدينية – تونس",18,18],alg:["وزارة الشؤون الدينية – الجزائر",18,17],mor:["وزارة الأوقاف – المغرب",19,17],kwt:["وزارة الأوقاف – الكويت",18,17.5],qat:["قطر",18,0,90]};
+const P=[["fajr","الفجر"],["sunrise","الشروق"],["dhuhr","الظهر"],["asr","العصر"],["maghrib","المغرب"],["isha","العشاء"]];
+let S={co:7,ci:0,my:null,method:null,asr:1,theme:"",nt:{fajr:0,dhuhr:0,asr:0,maghrib:0,isha:0}},mo=0,view="home",lastN=0,nkey="";
+try{Object.assign(S,JSON.parse(localStorage.getItem("salati")||"{}"))}catch(e){}
+const save=()=>{try{localStorage.setItem("salati",JSON.stringify(S))}catch(e){}};
+const city=()=>S.my||C[S.co].c[S.ci]||C[S.co].c[0],tzn=()=>S.my?S.my.tz:C[S.co].tz,mkey=()=>S.method||(S.my?"mwl":C[S.co].m);
+function jd(y,m,d){if(m<=2){y--;m+=12}const A=Math.floor(y/100),B=2-A+Math.floor(A/4);return Math.floor(365.25*(y+4716))+Math.floor(30.6001*(m+1))+d+B-1524.5}
+function sp(j){const d=j-2451545,g=fix(357.529+.98560028*d,360),q=fix(280.459+.98564736*d,360),L=fix(q+1.915*sin(g)+.02*sin(2*g),360),e=23.439-3.6e-7*d,ra=fix(atan2(cos(e)*sin(L),cos(L))/15,24);return{dc:asin(sin(e)*sin(L)),eq:q/15-ra}}
+function parts(ts,tz){return Object.fromEntries(new Intl.DateTimeFormat("en-US",{timeZone:tz,hourCycle:"h23",year:"numeric",month:"numeric",day:"numeric",hour:"numeric",minute:"numeric",second:"numeric"}).formatToParts(ts).map(x=>[x.type,+x.value]))}
+function off(tz,y,m,d){const dt=Date.UTC(y,m-1,d,12),p=parts(dt,tz);return(Date.UTC(p.year,p.month-1,p.day,p.hour,p.minute)-dt)/36e5}
+function calc(y,m,d){const c=city(),tz=tzn(),t0=off(tz,y,m,d),me=M[mkey()],j=jd(y,m,d)-c.lng/360,mid=t=>fix(12-sp(j+t/24).eq,24),
+ang=(a,t,ccw)=>{const dc=sp(j+t/24).dc,v=(-sin(a)-sin(dc)*sin(c.lat))/(cos(dc)*cos(c.lat));if(Math.abs(v)>1)return NaN;const h=acos(v)/15;return mid(t)+(ccw?-h:h)},
+adj=t0-c.lng/15,dc13=sp(j+13/24).dc,mg=ang(.833,18),
+h={fajr:ang(me[1],5,1),sunrise:ang(.833,6,1),dhuhr:mid(12)+1/60,asr:ang(-acot(S.asr+tan(Math.abs(c.lat-dc13))),13),maghrib:mg,isha:me[3]?mg+me[3]/60:ang(me[2],18)},r={};
+for(const k in h)r[k]=Date.UTC(y,m-1,d)+(h[k]+adj-t0)*36e5;return r}
+const fmt=(ts,o)=>isNaN(ts)?"--:--":new Intl.DateTimeFormat("ar-EG-u-nu-latn",Object.assign({timeZone:tzn()},o||{hour:"2-digit",minute:"2-digit",hour12:true})).format(ts);
+const pad=n=>String(n).padStart(2,"0");
+function nextP(){const now=Date.now(),p=parts(now,tzn());let t=calc(p.year,p.month,p.day);for(const[k]of P){if(k!="sunrise"&&t[k]>now)return{k,ts:t[k],t}}const n=new Date(Date.UTC(p.year,p.month-1,p.day+1)),t2=calc(n.getUTCFullYear(),n.getUTCMonth()+1,n.getUTCDate());return{k:"fajr",ts:t2.fajr,t}}
+function toast(s){const e=$("#toast");e.textContent=s;e.style.display="block";clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display="none",5000)}
+function tick(){const now=Date.now(),tz=tzn();$("#clk").textContent=fmt(now,{hour:"2-digit",minute:"2-digit",second:"2-digit",hourCycle:"h23"});
+const n=nextP();if(n.k+n.ts!=nkey){nkey=n.k+n.ts;render()}
+const l=Math.max(0,n.ts-now),el=$("#cd");if(el)el.textContent=pad(Math.floor(l/36e5))+":"+pad(Math.floor(l%36e5/6e4))+":"+pad(Math.floor(l%6e4/1e3));
+for(const[k,nm]of P)if(S.nt[k]&&n.t[k]&&now>=n.t[k]&&now-n.t[k]<2500&&lastN!=n.t[k]){lastN=n.t[k];toast("حان الآن موعد صلاة "+nm);try{if(Notification.permission=="granted")new Notification("صلاتي",{body:"حان الآن موعد صلاة "+nm+" – "+city().n})}catch(e){}}}
+function head(){const now=Date.now();$("#dt").innerHTML=new Intl.DateTimeFormat("ar-u-ca-islamic-umalqura-nu-latn",{dateStyle:"long",timeZone:tzn()}).format(now)+"<br>"+new Intl.DateTimeFormat("ar-u-ca-gregory-nu-latn",{dateStyle:"full",timeZone:tzn()}).format(now);$("#locb").innerHTML=PIN+" "+(S.my?"":C[S.co].n+" – ")+city().n+" ▾"}
+const PIN='<svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
+const IC=p=>'<svg viewBox="0 0 24 24">'+p+'</svg>';
+const TABS=[["home",IC('<path d="M5 21v-7a7 7 0 0 1 14 0v7M12 7V3m-1.500 2h3M3 21h18M9.500 21v-3a2.500 2.500 0 0 1 5 0v3"/>'),"الرئيسية"],["month",IC('<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>'),"الشهري"],["cities",IC('<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3.500 3.500 3.500 14.500 0 18M12 3c-3.500 3.500-3.500 14.500 0 18"/>'),"المدن"],["settings",IC('<path d="M4 7h9M18 7h2M4 17h2M11 17h9"/><circle cx="15.500" cy="7" r="2.500"/><circle cx="8.500" cy="17" r="2.500"/>'),"الإعدادات"],["about",IC('<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.500v.01"/>'),"عن الموقع"]];
+function render(){head();$("#nav").innerHTML=TABS.map(t=>`<a href="#${t[0]}" class="${t[0]==view?"act":""}"><i>${t[1]}</i>${t[2]}</a>`).join("");$("#app").innerHTML=V[view]();}
+const V={
+home(){const p=parts(Date.now(),tzn()),t=calc(p.year,p.month,p.day),n=nextP(),nm=P.find(x=>x[0]==n.k)[1];
+return`<div class="card next"><div class="nm">الصلاة القادمة: <b>${nm}</b> – ${fmt(n.ts)}</div><div class="cd" id="cd">--:--:--</div><div class="nm">الوقت المتبقي</div></div><div class="grid">${P.map(([k,a])=>`<div class="pc ${k=="sunrise"?"sr":""} ${k==n.k?"on":""}"><b>${a}</b><span>${fmt(t[k])}</span>${k==n.k?"<small>الصلاة القادمة</small>":k=="sunrise"?"<small>ليست صلاة</small>":""}</div>`).join("")}</div><div class="card mu" style="margin-top:12px">طريقة الحساب: ${M[mkey()][0]} · العصر: ${S.asr==2?"حنفي":"جمهور (شافعي/مالكي/حنبلي)"}<br><button class="b alt" style="margin-top:10px" onclick="share()">مشاركة المواقيت</button></div>`},
+month(){const p=parts(Date.now(),tzn()),b=new Date(Date.UTC(p.year,p.month-1+mo,1)),y=b.getUTCFullYear(),m=b.getUTCMonth()+1,n=new Date(Date.UTC(y,m,0)).getUTCDate();let r="";
+for(let d=1;d<=n;d++){const t=calc(y,m,d),w=new Intl.DateTimeFormat("ar",{weekday:"short",timeZone:"UTC"}).format(Date.UTC(y,m-1,d));r+=`<tr class="${mo==0&&d==p.day?"td":""}"><td style="direction:rtl">${w} ${d}</td>${P.map(([k])=>`<td>${fmt(t[k])}</td>`).join("")}</tr>`}
+return`<div class="card"><div class="row"><button class="chip" onclick="mo++;render()">التالي ›</button><b>${new Intl.DateTimeFormat("ar-u-nu-latn",{month:"long",year:"numeric",timeZone:"UTC"}).format(b)}</b><button class="chip" onclick="mo--;render()">‹ السابق</button></div><div class="tw"><table><tr><th>اليوم</th>${P.map(x=>`<th>${x[1]}</th>`).join("")}</tr>${r}</table></div></div>`},
+cities(){const q=(window.q||"").trim(),all=[];if(q)C.forEach((c,i)=>c.c.forEach((x,j)=>{if((x.n+" "+c.n).includes(q))all.push([i,j])}));
+return`<div class="card"><h2>بحث عن مدينة</h2><input id="qi" placeholder="اكتب اسم مدينة أو دولة…" value="${q}" oninput="window.q=this.value;sq()"><div class="chips" id="rs">${rs(all)}</div></div><div class="card"><h2>اختر الدولة</h2><select onchange="S.co=+this.value;S.ci=0;S.my=null;save();nkey='';render()">${C.map((c,i)=>`<option value="${i}" ${i==S.co&&!S.my?"selected":""}>${c.n}</option>`).join("")}</select><div class="chips">${C[S.co].c.map((c,i)=>`<button class="chip ${i==S.ci&&!S.my?"sel":""}" onclick="pick(${S.co},${i})">${c.n}</button>`).join("")}</div></div><div class="card"><button class="b" onclick="geo()">تحديد موقعي الجغرافي</button><div class="mu" id="gm">يتم استخدام موقعك داخل المتصفح فقط ولا يُرسل لأي جهة.</div></div>`},
+settings(){const nt=("Notification"in window)?Notification.permission:"denied";
+return`<div class="card"><h2>طريقة الحساب</h2><select onchange="S.method=this.value||null;save();nkey='';render()"><option value="">تلقائي حسب الدولة (${M[C[S.co].m][0]})</option>${Object.keys(M).map(k=>`<option value="${k}" ${S.method==k?"selected":""}>${M[k][0]}</option>`).join("")}</select><h2>المذهب في صلاة العصر</h2><div class="chips"><button class="chip ${S.asr==1?"sel":""}" onclick="S.asr=1;save();nkey='';render()">جمهور (ظل = 1)</button><button class="chip ${S.asr==2?"sel":""}" onclick="S.asr=2;save();nkey='';render()">حنفي (ظل = 2)</button></div></div><div class="card"><h2>التنبيهات</h2>${nt=="granted"?"":`<button class="b" onclick="askN()">تفعيل الإشعارات</button>`}${P.filter(x=>x[0]!="sunrise").map(([k,a])=>`<div class="row"><span>تنبيه ${a}</span><button class="sw ${S.nt[k]?"on":""}" aria-label="${a}" onclick="S.nt['${k}']=S.nt['${k}']?0:1;save();render()"></button></div>`).join("")}<div class="mu">تعمل التنبيهات أثناء فتح الصفحة في المتصفح.</div></div><div class="card"><h2>المظهر</h2><div class="chips"><button class="chip" onclick="th('light')">نهاري</button><button class="chip" onclick="th('dark')">ليلي</button></div></div>`},
+about(){return`<div class="card"><h2>عن «صلاتي»</h2><p class="mu">موقع مجاني يعرض مواقيت الصلاة في جميع الدول العربية الاثنتين والعشرين، بالتاريخين الهجري والميلادي.</p><h2>كيف تُحسب المواقيت؟</h2><p class="mu">تُحسب المواقيت فلكيًا مباشرةً في متصفحك من خط العرض والطول وموقع الشمس لكل يوم، مع مراعاة المنطقة الزمنية والتوقيت الصيفي للمدينة. تعتمد الطريقة المختارة زوايا الفجر والعشاء (مثل أم القرى ورابطة العالم الإسلامي والهيئة المصرية)، ويحدد المذهب ظل العصر. قد يختلف الحساب عن التقويم الرسمي بدقيقة إلى دقيقتين، فيُرجى الاعتماد على الجهة الرسمية في بلدك عند الحاجة.</p><p class="mu">التاريخ الهجري وفق تقويم أم القرى وقد يختلف يومًا عن رؤية الهلال المحلية. الإحداثيات تقريبية لمركز كل مدينة.</p></div>`}};
+function rs(a){return a.map(([i,j])=>`<button class="chip" onclick="pick(${i},${j})">${C[i].c[j].n} · ${C[i].n}</button>`).join("")||(window.q?"<span class='mu'>لا توجد نتائج</span>":"")}
+function sq(){const q=window.q.trim(),a=[];if(q)C.forEach((c,i)=>c.c.forEach((x,j)=>{if((x.n+" "+c.n).includes(q))a.push([i,j])}));$("#rs").innerHTML=rs(a)}
+function pick(i,j){S.co=i;S.ci=j;S.my=null;save();nkey="";location.hash="home";render()}
+function geo(){const g=$("#gm");if(!navigator.geolocation){g.innerHTML="<span class='err'>المتصفح لا يدعم تحديد الموقع.</span>";return}g.textContent="جارٍ تحديد الموقع…";navigator.geolocation.getCurrentPosition(p=>{S.my={n:"موقعي الحالي",lat:p.coords.latitude,lng:p.coords.longitude,tz:Intl.DateTimeFormat().resolvedOptions().timeZone};save();nkey="";location.hash="home";render()},()=>{g.innerHTML="<span class='err'>تعذّر تحديد الموقع. اسمح بالإذن أو اختر مدينتك يدويًا.</span>"},{timeout:10000})}
+function askN(){try{Notification.requestPermission().then(()=>render())}catch(e){toast("المتصفح لا يدعم الإشعارات")}}
+function th(t){S.theme=t;document.documentElement.dataset.theme=t;save()}
+function share(){const p=parts(Date.now(),tzn()),t=calc(p.year,p.month,p.day),s="مواقيت الصلاة – "+city().n+"\n"+P.map(([k,a])=>a+": "+fmt(t[k])).join("\n")+"\nصلاتي";if(navigator.share)navigator.share({title:"صلاتي",text:s}).catch(()=>{});else try{navigator.clipboard.writeText(s);toast("تم نسخ المواقيت")}catch(e){toast("تعذّرت المشاركة")}}
+function route(){const h=location.hash.slice(1);view=V[h]?h:"home";render();scrollTo(0,0)}
+addEventListener("hashchange",route);if(S.theme)document.documentElement.dataset.theme=S.theme;
+try{route();setInterval(tick,1000);tick()}catch(e){$("#app").innerHTML="<div class='card err'>تعذّر حساب المواقيت. يرجى تحديث الصفحة.</div>"}
+</script>
+</body>
+</html>
